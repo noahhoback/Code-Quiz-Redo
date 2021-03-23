@@ -125,4 +125,51 @@ timer.addEventListener("click", function() {
     }
     function compare(event) {
         var element = event.target;
+        if(element.matches("li")) {
+            var createDivContainer = document.createElement("div");
+            createDivContainer.setAttribute("id", "createDivContainer");
+    
+            if (element.textContent == questions[questionNumberIndex].answer) {
+                score++;
+                createDivContainer.textContent = "You are correct! The answer was: " + questions[questionNumberIndex].answer;
+    
+            } else {
+                secondsLeft = secondsLeft - wrongAnswer;
+                createDivContainer.textContent = "You are wrong! The correct answer was " + questions[questionNumberIndex].answer;
+            }
+    
+        }
+        questionNumberIndex++;
+    
+        if (questionNumberIndex >= questions.length) {
+            allDone();
+            createDivContainer.textContent = "The quiz is over!" + " " + "You got " + score + "/" + questions.length + " correct!";
+        } else {
+            render(questionNumberIndex);
+        }
+        quizQuestionDiv.appendChild(createDivContainer);
+    
+    }
+    function allDone() {
+        quizQuestionsDiv.innerHTML = "";
+        currentTime.innerHTML = "";
+
+        var createHeader = document.createElement("h1");
+        createHeader.setAttribute("id", "createHeader");
+        createHeader.textContent = "All done!";
+        
+        quizQuestionsDiv.appendChild(createHeader);
+        
+        var createP = document.createElement("p");
+        createP.setAttribute("id","createP");
+        quizQuestionsDiv.appendChild(createP);
+
+        if (secondsLeft >= 0) {
+            var remainingTime = secondsLeft;
+            var createP2 = document.createElement("p");
+            clearInterval(holdInterval);
+            createP.textContent = "Your final score is " + remainingTime;
+            quizQuestionsDiv.appendChild(createP2);
+        }
+        
     }
