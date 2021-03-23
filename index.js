@@ -171,5 +171,46 @@ timer.addEventListener("click", function() {
             createP.textContent = "Your final score is " + remainingTime;
             quizQuestionsDiv.appendChild(createP2);
         }
-        
+    var createLabel = document.createElement("label");
+    createLabel.setAttribute("id", "createLabel");
+    createLabel.textContent = "Enter your name: ";
+    quizQuestionsDiv.appendChild(createLabel);
+
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "userName");
+    createInput.textContent = "";
+    quizQuestionsDiv.appendChild(createInput);
+
+    var createSubmitBtn = document.createElement("button");
+    createSubmitBtn.setAttribute("type","submit");
+    createSubmitBtn.setAttribute("id", "submitBtn");
+    createSubmitBtn.textContent = "Submit";
+    quizQuestionsDiv.appendChild(createSubmitBtn);
+
+    createSubmitBtn.addEventListener("click", function() {
+        var userName = createInput.value;
+
+        if (userName === null) {
+            alert("No Name was Entered");
+
+        }else {
+            var finalScore = {
+                userName: userName,
+                score: remainingTime
+            }
+            console.log(finalScore);
+            var scoreList = localStorage.getItem("scoreList");
+            if (scoreList === null) {
+                scoreList = [];
+            }else {
+                scoreList = JSON.parse(scoreList);
+            }
+            scoreList.push(finalScore);
+            var newScore = JSON.stringify(scoreList);
+            localStorage.setItem("scoreList", newScore);
+
+            window.location.replace("./highscore.html")
+        }
+    });
     }
