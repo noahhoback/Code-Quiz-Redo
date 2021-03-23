@@ -1,4 +1,8 @@
-var questions = [
+/*Creating a variable for the multiple choice questions. Put them in an array, consisting of
+'title' (the questions themselves), choices (the possible answers to the multiple choice questions), 
+and answer (the correct answer to the question) */
+
+var questions = [ 
     {
         title: "How do you call a function named 'myFunction'?",
         choices: ["call myFunction()","myFunction()", "call function myFunction()", "exe.myFunction"],
@@ -78,21 +82,21 @@ var questions = [
 
 ];
 
-
+//Declared Variables
 var score = 0;
 var questionNumberIndex = 0;
 var currentTime = document.querySelector("#timerDiv"); 
 var timer = document.querySelector("#startBtn");
 var quizQuestionDiv = document.querySelector("#quizQuestionDiv");
 var wrapper = document.querySelector("#wrapper");
-
+//Timer set to 10 seconds per question
 var secondsLeft = 150;
 var holdInterval = 0;
-
+//setting value of wrongAnswer to 10; later code will use this to deduct 10 seconds from "secondsLeft" when an incorrect answer is selected
 var wrongAnswer = 10;
 var ulCreateElement = document.createElement("ul");
 
-
+//event listener to start timeer when startBtn is clicked
 timer.addEventListener("click", function () {
 
     if (holdInterval === 0) {
@@ -109,7 +113,7 @@ timer.addEventListener("click", function () {
    }
     render(questionNumberIndex);
 });
-
+//rendering the multiple choice questions and answers to the page
 function render(questionNumberIndex) {
     quizQuestionDiv.innerHTML = "";
     ulCreateElement.innerHTML = "";
@@ -129,7 +133,7 @@ function render(questionNumberIndex) {
     })
 }
 
-
+//comparing the user's selected answer choice with the correct answer
 function compare(event) {
     var element = event.target;
 
@@ -159,7 +163,7 @@ function compare(event) {
 
 }
 
-
+//function for completion of the quiz, appends to last page
 function allDone() {
     quizQuestionDiv.innerHTML = "";
     currentTime.innerHTML = "";
@@ -176,7 +180,7 @@ function allDone() {
     quizQuestionDiv.appendChild(createP);
 
 
-
+//converts timeRemaining to score
     if (secondsLeft >= 0) {
         var remainingTime = secondsLeft;
         var createP2 = document.createElement("p");
@@ -204,7 +208,7 @@ function allDone() {
     quizQuestionDiv.appendChild(createSubmitBtn);
 
     
-
+// event listener that takes in user's name and local storage for var 'userName' and score
     createSubmitBtn.addEventListener("click", function() {
         var userName = createInput.value;
 
@@ -228,10 +232,8 @@ function allDone() {
             localStorage.setItem("scoreList", newScore);
 
             window.location.replace("highscore.html");
-            preventDefault();
-
             
-        }
+            }
     });
 
 }
