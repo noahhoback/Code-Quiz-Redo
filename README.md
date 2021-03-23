@@ -2,11 +2,16 @@
 # 04 Web APIs: Code Quiz
 This assignment asked us to create a quiz application from scratch using HTML, CSS, and Javascript. The application provides quiz questions and collects the user input to compare the user's answer to the correct answer. A score is generated and appended to a "High Score Page". The following screenshots display the code quiz's functionality:
 
-Home Page: 
-Quiz question correct:
-Quiz question wrong:
-Final Score:
-High Score Page: 
+Home Page: ![Home Page](https://user-images.githubusercontent.com/77941463/112127030-67a52500-8b9b-11eb-8468-8a03d044c3fe.png)
+
+Quiz question correct: ![Correct Answer](https://user-images.githubusercontent.com/77941463/112127077-725fba00-8b9b-11eb-9db0-a9a63abce703.png)
+
+Quiz question wrong: ![Wrong Answer](https://user-images.githubusercontent.com/77941463/112127103-78ee3180-8b9b-11eb-8a3e-7e39ad38a725.png)
+
+Final Score: ![All Done](https://user-images.githubusercontent.com/77941463/112127135-81466c80-8b9b-11eb-9662-c4ccf79798c7.png)
+
+High Score Page: ![High Scores](https://user-images.githubusercontent.com/77941463/112127171-886d7a80-8b9b-11eb-88e0-adebdc4d93fa.png)
+
 ## Your Task
 
 At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
