@@ -89,7 +89,7 @@ var wrapper = document.querySelector("#wrapper");
 var secondsLeft = 150;
 var holdInterval = 0;
 
-
+var wrongAnswer = 10;
 var ulCreateElement = document.createElement("ul");
 
 
@@ -227,7 +227,7 @@ function allDone() {
             var newScore = JSON.stringify(scoreList);
             localStorage.setItem("scoreList", newScore);
 
-            window.location.replace("./highscores.html");
+            window.location.replace("highscore.html");
             preventDefault();
 
             
