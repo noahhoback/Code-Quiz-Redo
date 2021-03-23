@@ -1,0 +1,50 @@
+#wrapper {
+    position:absolute;
+    width: 600px;
+    height: 600px;
+    left: 25%;
+    top: 25%;
+    border: 5px solid darkblue;
+}
+
+#quizQuestionDiv {
+    margin: 10%;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#startBtn {
+    font-size: 20px;
+    color:white;
+    background-color:darkblue;
+}
+
+#goBackBtn {
+    font-size: 20px;
+    color: white;
+    background-color:darkblue;
+    margin-left: 140px;
+}
+
+#clearBtn {
+    font-size: 20px;
+    color: white;
+    background-color: darkblue;
+}
+
+#submitBtn {
+    font-size: 20px;
+    color: white;
+    background-color: darkblue;
+}
+li {
+    background-color: darkblue;
+    margin: 10%;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+}
+h1 {
+    text-align: center;
+}
