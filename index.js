@@ -84,3 +84,45 @@ var currentTime = document.querySelector("#timerDiv");
 var timer = document.querySelector("#startBtn");
 var quizQuestionsDiv = document.querySelector("quizQuestionDiv");
 var wrapper = document.querySelector("#wrapper");
+
+var secondsLeft = 150;
+var holdInterval = 0;
+var wrongAnswer = 10;
+
+var ulCreateElement = document.createElement("ul");
+timer.addEventListener("click", function() {
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            currentTime.textContent = "Time Left " + secondsLeft;
+
+            if (secondsLeft <= 0 {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textContent = "Your time has run out!";
+            }
+           }, 1000);
+        }
+        render(questionNumberIndex);
+    });
+
+    function render(questionNumberIndex) {
+        quizQuestionsDiv.innerHTML = "";
+        ulCreateElement.innerHTML = "";
+
+        for (var i = 0; i < questions.length; i++) {
+            var userQuestions = questions[questionNumberIndex].title;
+            var userAnswerChoices = questions[questionNumberIndex].choices;
+            quizQuestionsDiv.textContent = userQuestions;
+        }
+        userAnswerChoices.forEach(function (newItem) {
+            var listItem = document.createElement("li");
+            listItem.textContent = newItem;
+            quizQuestionsDiv.appendChild(ulCreateElement);
+            ulCreateElement.appendChild(listItem);
+            listItem.addEventListener("click", (compare)); 
+        })
+    }
+    function compare(event) {
+        var element = event.target;
+    }
